@@ -12,10 +12,10 @@ function draw() {
   mom = select("#geno-mom").value().split("");
   background(235);
   fill(51);
-	console.log(dad.length % 2 === 0 && dad.length === mom.length);
   if (dad.length % 2 === 0 && dad.length === mom.length) {
-    for (let i = 0; i < pow(2, dad.length)/2+1; i++) {
-      line(width * 0.25, height * (i * 0.0625 + 0.25), width*(mom.length*0.0625+0.25), height * (i * 0.0625 + 0.25));
+    for (let i = 0; i < pow(2, dad.length/2) + 1; i++) {
+      line(width * 0.25, height * (i * 0.0625 + 0.25), width * (pow(2, mom.length/2) * 0.0625 + 0.25), height * (i * 0.0625 + 0.25));
+      line(width * (i * 0.0625 + 0.25), height * 0.25, width * (i * 0.0625 + 0.25), height * (pow(2, mom.length/2) * 0.0625+0.25));
     }
   }
 }
