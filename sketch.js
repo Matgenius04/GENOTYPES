@@ -26,6 +26,4 @@ function windowResized() {
 	select("canvas").position(0, 0);
 	select("#geno-dad").position(windowWidth*0.05, windowHeight*0.05);
 	select("#geno-mom").position(windowWidth*0.05, windowHeight*0.07);
-	select("#pheno-dom").position(windowWidth*0.05, windowHeight*0.09);
-	select("#pheno-rec").position(windowWidth*0.05, windowHeight*0.11);
 }
