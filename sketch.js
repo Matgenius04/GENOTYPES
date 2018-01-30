@@ -3,6 +3,7 @@ let mom = [];
 let dadCombos = [];
 let pdadCombos = [];
 let momCombos = [];
+let pmomCombos = [];
 let offspring = [];
 
 function setup() {
@@ -17,7 +18,6 @@ function draw() {
   background(235);
   fill(51);
   if (dad.length % 2 === 0 && dad.length === mom.length) {
-    if (dadCombos != pdadCombos) {
       dadCombos = [];
       momCombos = [];
       offspring = [];
@@ -30,12 +30,12 @@ function draw() {
           offspring.push(mix(dad, mom));
         }
       }
-    }
     for (let i = 0; i < pow(2, dad.length / 2) + 1; i++) {
       line(width * 0.25, height * (i * 0.0625 + 0.25), width * (pow(2, mom.length / 2) * 0.0625 + 0.25), height * (i * 0.0625 + 0.25));
       line(width * (i * 0.0625 + 0.25), height * 0.25, width * (i * 0.0625 + 0.25), height * (pow(2, mom.length / 2) * 0.0625 + 0.25));
       if (dadCombos.length != 0 && momCombos.length != 0 && i < pow(2, dad.length / 2)) {
         textSize(width / 80);
+        console.log(momCombos);
         text(momCombos[i], width * 0.24 - textWidth(momCombos[i]), height * ((i+0.5) * 0.0625 + 0.25));
         text(dadCombos[i], width * ((i+0.2) * 0.0625 + 0.25), height * 0.24);
       }
@@ -47,6 +47,7 @@ function draw() {
     }
   }
   pdadCombos = dadCombos;
+  pmomCombos = momCombos;
 }
 
 function windowResized() {
