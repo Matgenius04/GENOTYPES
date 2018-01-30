@@ -1,6 +1,7 @@
 let dad = [];
 let mom = [];
 let dadCombos = [];
+let pdadCombos = [];
 let momCombos = [];
 let offspring = [];
 
@@ -16,9 +17,10 @@ function draw() {
   background(235);
   fill(51);
   if (dad.length % 2 === 0 && dad.length === mom.length) {
-    if (dadCombos.length != dad.length) {
+    if (dadCombos != pdadCombos) {
       dadCombos = [];
       momCombos = [];
+      offspring = [];
       for (let i = 0; i < pow(2, dad.length / 2); i++) {
         dadCombos.push(combo(dad, i));
         momCombos.push(combo(mom, i));
@@ -44,6 +46,7 @@ function draw() {
       }
     }
   }
+  pdadCombos = dadCombos;
 }
 
 function windowResized() {
