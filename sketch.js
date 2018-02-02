@@ -17,6 +17,7 @@ function draw() {
   mom = select("#geno-mom").value().split("");
   background(235);
   fill(51);
+  text("A challenge from my science teacher", width*0.02, height*0.95);
   if (dad.length % 2 === 0 && dad.length === mom.length) {
       dadCombos = [];
       momCombos = [];
