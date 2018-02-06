@@ -28,7 +28,7 @@ function draw() {
       }
       for (let dad of dadCombos) {
         for (let mom of momCombos) {
-          offspring.push(mix(dad, mom));
+          offspring.push(mix(mom, dad));
         }
       }
     for (let i = 0; i < pow(2, dad.length / 2) + 1; i++) {
@@ -43,7 +43,7 @@ function draw() {
     }
     for (let i = 0; i < dadCombos.length; i++) {
       for (let j = 0; j < momCombos.length; j++) {
-        text(getOffspring(i, j), width * (i * 0.0625 + 0.26), height * ((j+0.5) * 0.0625 + 0.25))
+        text(getOffspring(j, i), width * (i * 0.0625 + 0.26), height * ((j+0.5) * 0.0625 + 0.25))
       }
     }
   }
