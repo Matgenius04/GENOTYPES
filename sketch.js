@@ -79,8 +79,17 @@ function mix(gameteAA, gameteBB) {
   let gameteB = gameteBB.split("");
   let ret = "";
   for (let i = 0; i < gameteA.length; i++) {
-    ret+=gameteA[i];
-    ret+=gameteB[i];
+    let add = "";
+    let aUpper = gameteA[i].toUpperCase() == gameteA[i];
+    let bUpper = gameteB[i].toUpperCase() == gameteB[i];
+    if ((aUpper && bUpper) || (aUpper && !bUpper) || (!aUpper && !bUpper)) {
+      add+=gameteA[i];
+      add+=gameteB[i];
+    } else if (!aUpper && bUpper) {
+      add+=gameteB[i];
+      add+=gameteA[i];
+    }
+    ret+=add;
   }
   return ret;
 }
